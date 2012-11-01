@@ -1,4 +1,5 @@
 import unittest
+import random
 from board import Board
 
 class TestBoard(unittest.TestCase):
@@ -29,3 +30,15 @@ class TestBoard(unittest.TestCase):
     def test_show_board(self):
         b = Board(10, 10)
         self.assertEqual('{}'.format(b), (((' ' * 10) + '\n') * 10) [:-1])
+
+    def test_pieces_are_placed_and_restored(self):
+        width = 4000
+        height = 4000
+        board = Board(width, height)
+        pieces = [(random.randint(0, width), random.randint(0, height), { "i" : random.randint(0, 5000)}) for x in range(0, random.randint(0, 57000))]
+
+        for piece in pieces:
+            board.place(piece[0], piece[1],  piece[2])
+            self.assertEquals(board.get(piece[0], piece[1])["i"], piece[2])
+
+        self.assertEquals(len(board.contents()), len(pieces))
