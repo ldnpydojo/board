@@ -18,7 +18,7 @@ Definitely Useful Requirements
 ------------------------------
 
 * Find neighbours (possibly bounded)
-* Detect runs / lines
+* Detect runs / lines (eg Connect4, Battleships)
 
 Definitely Optional Requirements
 --------------------------------
@@ -26,3 +26,4 @@ Definitely Optional Requirements
 * 3-dimensional / n-dimensional
 * Spherical / other-topological board
 * Non-bounded
+* Fancy pygame / js / whatever output
