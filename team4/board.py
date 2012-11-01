@@ -54,7 +54,7 @@ class Board(object):
         pass
 
     def get_viewport(self):
-        slice
+        return self
 
     def neighbours(self, loc):
         loc = self._bounds_check(loc)
