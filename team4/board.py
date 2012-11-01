@@ -46,7 +46,7 @@ class Board(object):
                 if not (0 <= dim < self.dimensions[i]):
                     raise ValueError("Location out of bounds")
 
-        return loc
+        return tuple(loc)
 
     def occupied(self):
         pass
