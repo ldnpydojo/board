@@ -1,0 +1,11 @@
+Cell subclass
+Board class (many cells)
+__getitem__ (tuple)
+__setitem__ (tuple)
+neighbour detection: each cell has hash of surrounding cells
+
+?? cells as nested dictionary [Sandy]
+property : how many things in cell / what can be in the cell
+
+iterate over all cells in line / column etc.
+
