@@ -14,11 +14,13 @@ Critical Requirements
 * Remove something from a coordinate
 * Textual display
 
+* Unit Tests
+
 Definitely Useful Requirements
 ------------------------------
 
 * Find neighbours (possibly bounded)
-* Detect runs / lines (eg Connect4, Battleships)
+* Detect runs / lines (think Connect4, Battleships, Noughts & Crosses)
 
 Definitely Optional Requirements
 --------------------------------
