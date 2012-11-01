@@ -1,3 +1,5 @@
+import itertools
+
 class Board(object):
     def __init__(self, dimensions, wrap=False, infinite=False):
         self.dimensions = dimensions
@@ -55,14 +57,27 @@ class Board(object):
         slice
 
     def neighbours(self, loc):
-        for dim in loc:
-            coords.add(dim-1
+        loc = self._bounds_check(loc)
 
-        return {coord: val}
+        mins = [x - 1 for x in loc]
+        maxs = [x + 1 for x in loc]
 
+        coords = set(itertools.product(*zip(mins, loc, maxs)))
+        coords.remove(loc)
+
+        ret = {}
+        for c in coords:
+            val = self[c]
+            if val:
+                ret[c] = val
+
+        return ret
 
 if __name__ == '__main__':
-    x = Board([5,5,5], wrap=True)
+    x = Board([5,5], wrap=True)
 
-    x[100,1,1] = 1
-    print x[100, 1, 1]
+    x[1,1] = 1
+    x[1,2] = 2
+    x[1,3] = 3
+
+    print x.neighbours([1,2])
