@@ -24,5 +24,8 @@ class TestBoard(unittest.TestCase):
         b = Board(10, 10)
         b.place(2,1,"Foo")
         b.place(2,2,"Bar")
-        self.assertEquals(b.get_neighbours(2,1, ["Bar"]))
+        self.assertEquals(b.neighbours(2,1), ["Bar"])
 
+    def test_show_board(self):
+        b = Board(10, 10)
+        self.assertEqual('{}'.format(b), (((' ' * 10) + '\n') * 10) [:-1])

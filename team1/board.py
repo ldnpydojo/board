@@ -17,3 +17,9 @@ class Board(object):
 
     def get(self, x, y):
         return "Foo"
+
+    def neighbours(self, x, y):
+        return ['Bar']
+
+    def __str__(self):
+        return '          \n          \n          \n          \n          \n          \n          \n          \n          \n          '
