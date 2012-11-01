@@ -51,7 +51,17 @@ class Board(object):
         return tuple(loc)
 
     def occupied(self):
-        pass
+        minmax = [[float('inf'), float('-inf')]] * self.num_dimensions
+
+        for key in self._data.iterkeys():
+            for i, dim in enumerate(key):
+                if dim < minmax[i][0]:
+                    minmax[i][0] = dim
+
+                if dim > minmax[i][1]:
+                    minmax[i][1] = dim
+
+        return minmax
 
     def get_viewport(self):
         return self
